@@ -1,0 +1,30 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 5px;
+    font-size: 2rem;
+    font-family: monospace;
+  }
+  input[type=number] {
+    outline: none;
+    text-align: right;
+    font-weight: bold;
+    color: white;
+    width: 80px;
+    font-size: 1.3rem;
+    background: transparent;
+    border-bottom: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

@@ -1,25 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpService } from '../../http.service';
 import { Currency } from './currency';
+
 
 @Component({
   selector: 'app-curencies',
   templateUrl: './curencies.component.html',
-  styleUrls: ['./curencies.component.scss']
+  styleUrls: ['./curencies.component.scss'],
+  providers: [HttpService]
 })
 
 export class CurenciesComponent implements OnInit {
-  constructor(private http: HttpClient) { }
-
-  currency: Currency;
+  constructor(private httpService: HttpService) { }
+  currency: Currency[] = [];
   inputValue = 1;
-  valCoef = 25.7;
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/currency').subscribe((data: Currency) => {
-      console.log(data);
-      this.currency = data;
+    this.httpService.getData().subscribe((data: Currency[]) => {
+      data.forEach(item => {
+        // tslint:disable-next-line: triple-equals
+        if (item.currencyCodeA == 840) {
+          item.currencyCodeA = 'USD';
+          item.currencyCodeB = 'UAH';
+          this.currency.push(item);
+        // tslint:disable-next-line: triple-equals
+        } else if (item.currencyCodeA == 978 && item.currencyCodeB != 840) {
+          item.currencyCodeA = 'EUR';
+          item.currencyCodeB = 'UAH';
+          this.currency.push(item);
+        }
+      });
     });
   }
-
 }

@@ -1,6 +1,6 @@
 export class Currency {
-  currencyCodeA: number;
-  currencyCodeB: number;
+  currencyCodeA: any;
+  currencyCodeB: any;
   date: number;
   rateSell: number;
   rateBuy: number;

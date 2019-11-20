@@ -3,6 +3,9 @@
     🔄<input class="cur-input" type="number" [(ngModel)]="inputValue" pattern="[0-9]">
   </h3>
   <li *ngFor="let item of currency; let i = index">
-    {{ (inputValue ? inputValue : 1) | currency:item.currencyCodeA}} =  {{(inputValue ? inputValue : 1) * item.rateSell | currency:'':''}} {{item.currencyCodeB}}
+    {{ (inputValue ? inputValue : 1) | currency:item.currencyCodeA}} =  {{(inputValue ? inputValue : 1) * item.rateSell | currency:'₴'}}
+  </li>
+  <li *ngFor="let item of currency; let i = index">
+    {{ (inputValue ? inputValue : 1) | currency:'₴'}} =  {{(inputValue ? inputValue : 1) / item.rateSell | currency:item.currencyCodeA}}
   </li>
 </ul>

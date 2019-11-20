@@ -3,5 +3,8 @@
     <input class="cur-input" type="number" [(ngModel)]='inputValue'>
     USD = {{ inputValue * valCoef }} UAH
   </li>
+  <li *ngFor="let item of currency">
+  {{1 | currency}} {{item.currencyCodeA}} = {{item.rateSell ? item.rateSell : item.rateCross}} {{item.currencyCodeB}}
+  </li>
 </ul>
 

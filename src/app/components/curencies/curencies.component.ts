@@ -10,16 +10,16 @@ import { Currency } from './currency';
 
 export class CurenciesComponent implements OnInit {
   constructor(private http: HttpClient) { }
-  // https://api.monobank.ua/bank/currency
+
   currency: Currency;
   inputValue = 1;
   valCoef = 25.7;
 
   ngOnInit() {
-    // this.http.get('https://api.monobank.ua/bank/currency').subscribe((data: Currency) => {
-    //   console.log(data);
-    //   this.currency = data;
-    // });
+    this.http.get('http://localhost:3000/currency').subscribe((data: Currency) => {
+      console.log(data);
+      this.currency = data;
+    });
   }
 
 }

@@ -2,4 +2,13 @@
 html {
   background: #555;
   color: #eee;
+  height: 100vh;
+}
+
+body {
+  height: inherit;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

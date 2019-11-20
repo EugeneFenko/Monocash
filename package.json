@@ -4,11 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --baseHref='./'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "json-server db.json"
+    "server": "json-server db.json",
+    "deploy": "node deploy.github.js"
   },
   "private": true,
   "dependencies": {

@@ -41,7 +41,7 @@ module.exports = "<app-header></app-header>\n<app-curencies></app-curencies>\n<a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul>\n  <h3>\n    🔄<input class=\"cur-input\" type=\"number\" [(ngModel)]=\"inputValue\" pattern=\"[0-9]\">\n  </h3>\n  <li *ngFor=\"let item of currency; let i = index\">\n    {{ (inputValue ? inputValue : 1) | currency:item.currencyCodeA}} =  {{(inputValue ? inputValue : 1) * item.rateSell | currency:'':''}} {{item.currencyCodeB}}\n  </li>\n</ul>\n"
+module.exports = "<ul>\n  <h3>\n    🔄<input class=\"cur-input\" type=\"number\" [(ngModel)]=\"inputValue\" pattern=\"[0-9]\">\n  </h3>\n  <li *ngFor=\"let item of currency; let i = index\">\n    {{ (inputValue ? inputValue : 1) | currency:item.currencyCodeA}} =  {{(inputValue ? inputValue : 1) * item.rateSell | currency:'₴'}}\n  </li>\n  <li *ngFor=\"let item of currency; let i = index\">\n    {{ (inputValue ? inputValue : 1) | currency:'₴'}} =  {{(inputValue ? inputValue : 1) / item.rateSell | currency:item.currencyCodeA}}\n  </li>\n</ul>\n"
 
 /***/ }),
 

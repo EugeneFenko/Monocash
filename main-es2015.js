@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n<app-curencies></app-curencies>\n\n\n<router-outlet></router-outlet>\n"
+module.exports = "<app-header></app-header>\n<app-curencies></app-curencies>\n<app-footer></app-footer>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "<app-header></app-header>\n<app-curencies></app-curencies>\n\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul>\n  <input class=\"cur-input\" type=\"number\" [(ngModel)]=\"inputValue\" pattern=\"[0-9]\">\n  <li *ngFor=\"let item of currency; let i = index\">\n    {{inputValue | currency:item.currencyCodeA}} =  {{inputValue * item.rateSell | currency:'':''}} {{item.currencyCodeB}}\n  </li>\n</ul>\n"
+module.exports = "<ul>\n  <h3>\n    🔄<input class=\"cur-input\" type=\"number\" [(ngModel)]=\"inputValue\" pattern=\"[0-9]\">\n  </h3>\n  <li *ngFor=\"let item of currency; let i = index\">\n    {{ (inputValue ? inputValue : 1) | currency:item.currencyCodeA}} =  {{(inputValue ? inputValue : 1) * item.rateSell | currency:'':''}} {{item.currencyCodeB}}\n  </li>\n</ul>\n"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = "<ul>\n  <input class=\"cur-input\" type=\"number\" [(ngModel)]
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>Monobank open API</p>\n"
+module.exports = "<p>Latest update currency info:</p>\n<p>{{currency[0].date * 1000 | date:'medium'}}</p>\n"
 
 /***/ }),
 
@@ -63,7 +63,7 @@ module.exports = "<p>Monobank open API</p>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"https://www.monobank.ua/resources/0.1.22.1-1568284665000/img/card/card@3x.png\">\n</div>\n"
+module.exports = "<div style=\"text-align:center\">\n  <h2>\n    Welcome to <h1>{{ title }}!</h1>\n  </h2>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"https://www.monobank.ua/resources/0.1.22.1-1568284665000/img/card/card@3x.png\">\n</div>\n"
 
 /***/ }),
 
@@ -266,7 +266,7 @@ CurenciesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Zlbi9EZXNrdG9wL0NPREUvbmctbW9ub0Nhc2gvc3JjL2FwcC9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHdCQUFBO1VBQUEsdUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufSJdfQ== */"
+module.exports = ":host {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  font-size: 0.8rem;\n}\n:host p {\n  margin: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Zlbi9EZXNrdG9wL0NPREUvbmctbW9ub0Nhc2gvc3JjL2FwcC9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHFCQUFBO1VBQUEseUJBQUE7RUFDQSx5QkFBQTtVQUFBLG1CQUFBO0VBQ0EsNEJBQUE7RUFBQSw2QkFBQTtVQUFBLHNCQUFBO0VBQ0EsaUJBQUE7QUNDRjtBREFFO0VBQ0UsV0FBQTtBQ0VKIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBmb250LXNpemU6IDAuOHJlbTtcbiAgcCB7XG4gICAgbWFyZ2luOiA1cHg7XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgZm9udC1zaXplOiAwLjhyZW07XG59XG46aG9zdCBwIHtcbiAgbWFyZ2luOiA1cHg7XG59Il19 */"
 
 /***/ }),
 
@@ -282,17 +282,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../http.service */ "./src/app/http.service.ts");
+
 
 
 let FooterComponent = class FooterComponent {
-    constructor() { }
+    constructor(httpService) {
+        this.httpService = httpService;
+        this.currency = [];
+    }
     ngOnInit() {
+        this.httpService.getData().subscribe((data) => {
+            this.currency = data;
+        });
     }
 };
+FooterComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
+];
 FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-footer',
         template: __webpack_require__(/*! raw-loader!./footer.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/footer/footer.component.html"),
+        providers: [_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"]],
         styles: [__webpack_require__(/*! ./footer.component.scss */ "./src/app/components/footer/footer.component.scss")]
     })
 ], FooterComponent);
@@ -308,7 +320,7 @@ FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h1 {\n  font-family: \"Lucida Sans\", \"Lucida Sans Regular\", \"Lucida Grande\", \"Lucida Sans Unicode\", Geneva, Verdana, sans-serif;\n}\n\nimg {\n  box-shadow: 0px 7px 11px 4px #0000007d;\n  border-radius: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Zlbi9EZXNrdG9wL0NPREUvbmctbW9ub0Nhc2gvc3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNIQUFBO0FDQ0Y7O0FER0E7RUFDRSxzQ0FBQTtFQUNBLG1CQUFBO0FDQUYiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJoMSB7XG4gIGZvbnQtZmFtaWx5OiAnTHVjaWRhIFNhbnMnLCAnTHVjaWRhIFNhbnMgUmVndWxhcicsICdMdWNpZGEgR3JhbmRlJywgJ0x1Y2lkYSBTYW5zIFVuaWNvZGUnLCBHZW5ldmEsIFZlcmRhbmEsIHNhbnMtc2VyaWY7XG5cbn1cblxuaW1nIHtcbiAgYm94LXNoYWRvdzogMHB4IDdweCAxMXB4IDRweCAjMDAwMDAwN2Q7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG59XG4iLCJoMSB7XG4gIGZvbnQtZmFtaWx5OiBcIkx1Y2lkYSBTYW5zXCIsIFwiTHVjaWRhIFNhbnMgUmVndWxhclwiLCBcIkx1Y2lkYSBHcmFuZGVcIiwgXCJMdWNpZGEgU2FucyBVbmljb2RlXCIsIEdlbmV2YSwgVmVyZGFuYSwgc2Fucy1zZXJpZjtcbn1cblxuaW1nIHtcbiAgYm94LXNoYWRvdzogMHB4IDdweCAxMXB4IDRweCAjMDAwMDAwN2Q7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG59Il19 */"
+module.exports = "h1 {\n  font-family: \"Lucida Sans\", \"Lucida Sans Regular\", \"Lucida Grande\", \"Lucida Sans Unicode\", Geneva, Verdana, sans-serif;\n  margin-top: 0;\n}\n\nh2 {\n  font-family: monospace;\n  margin: 0;\n}\n\nimg {\n  box-shadow: 0px 7px 11px 4px #0000007d;\n  border-radius: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Zlbi9EZXNrdG9wL0NPREUvbmctbW9ub0Nhc2gvc3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNIQUFBO0VBQ0EsYUFBQTtBQ0NGOztBREVBO0VBQ0Usc0JBQUE7RUFDQSxTQUFBO0FDQ0Y7O0FERUE7RUFDRSxzQ0FBQTtFQUNBLG1CQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJoMSB7XG4gIGZvbnQtZmFtaWx5OiAnTHVjaWRhIFNhbnMnLCAnTHVjaWRhIFNhbnMgUmVndWxhcicsICdMdWNpZGEgR3JhbmRlJywgJ0x1Y2lkYSBTYW5zIFVuaWNvZGUnLCBHZW5ldmEsIFZlcmRhbmEsIHNhbnMtc2VyaWY7XG4gIG1hcmdpbi10b3A6IDA7XG59XG5cbmgyIHtcbiAgZm9udC1mYW1pbHk6IG1vbm9zcGFjZTtcbiAgbWFyZ2luOiAwO1xufVxuXG5pbWcge1xuICBib3gtc2hhZG93OiAwcHggN3B4IDExcHggNHB4ICMwMDAwMDA3ZDtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbn1cbiIsImgxIHtcbiAgZm9udC1mYW1pbHk6IFwiTHVjaWRhIFNhbnNcIiwgXCJMdWNpZGEgU2FucyBSZWd1bGFyXCIsIFwiTHVjaWRhIEdyYW5kZVwiLCBcIkx1Y2lkYSBTYW5zIFVuaWNvZGVcIiwgR2VuZXZhLCBWZXJkYW5hLCBzYW5zLXNlcmlmO1xuICBtYXJnaW4tdG9wOiAwO1xufVxuXG5oMiB7XG4gIGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7XG4gIG1hcmdpbjogMDtcbn1cblxuaW1nIHtcbiAgYm94LXNoYWRvdzogMHB4IDdweCAxMXB4IDRweCAjMDAwMDAwN2Q7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG59Il19 */"
 
 /***/ }),
 
@@ -328,7 +340,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let HeaderComponent = class HeaderComponent {
     constructor() {
-        this.title = 'Mono';
+        this.title = 'Monocash💰';
     }
     ngOnInit() {
     }
